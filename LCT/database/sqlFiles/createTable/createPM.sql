@@ -1,4 +1,4 @@
-CREATE  TABLE IF NOT EXISTS cm_reference_table (
+  CREATE  TABLE IF NOT EXISTS cm_reference_table (
   rack TINYINT(3) NOT NULL ,
   subrack TINYINT(3) NOT NULL ,
   card_id TINYINT(3) NOT NULL ,
@@ -9,7 +9,7 @@ CREATE  TABLE IF NOT EXISTS cm_reference_table (
   ref_key VARCHAR(30) NOT NULL ,
   PRIMARY KEY (ref_key) );
   
-CREATE TABLE IF NOT EXISTS tpn_optical_parameters (
+  CREATE TABLE IF NOT EXISTS tpn_optical_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -43,13 +43,10 @@ CREATE TABLE IF NOT EXISTS tpn_optical_parameters (
   itla_tx_temp_avg FLOAT NOT NULL default -1000,
   PRIMARY KEY (ref_key, rcv_date, rcv_time) ,
   INDEX (ref_key) ,
-  CONSTRAINT cm_ref_tpn_opt
-    FOREIGN KEY (ref_key )
-    REFERENCES cm_reference_table (ref_key)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE);
+  CONSTRAINT cm_ref_tpn_opt FOREIGN KEY (ref_key ) REFERENCES cm_reference_table (ref_key)
+  ON DELETE CASCADE ON UPDATE CASCADE);
 
-CREATE TABLE IF NOT EXISTS mcs_optical_parameters (
+  CREATE TABLE IF NOT EXISTS mcs_optical_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -129,7 +126,7 @@ CREATE TABLE IF NOT EXISTS mcs_optical_parameters (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
-CREATE TABLE IF NOT EXISTS voa_optical_parameters (
+  CREATE TABLE IF NOT EXISTS voa_optical_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -147,7 +144,7 @@ CREATE TABLE IF NOT EXISTS voa_optical_parameters (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
-CREATE TABLE IF NOT EXISTS wss_wss_optical_parameters (
+  CREATE TABLE IF NOT EXISTS wss_wss_optical_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -163,7 +160,7 @@ CREATE TABLE IF NOT EXISTS wss_wss_optical_parameters (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
    
-CREATE TABLE IF NOT EXISTS wss_ocm_optical_parameters (
+  CREATE TABLE IF NOT EXISTS wss_ocm_optical_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -179,7 +176,7 @@ CREATE TABLE IF NOT EXISTS wss_ocm_optical_parameters (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
-CREATE TABLE IF NOT EXISTS wss_ocm_wavelength_info (
+  CREATE TABLE IF NOT EXISTS wss_ocm_wavelength_info (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -198,7 +195,7 @@ CREATE TABLE IF NOT EXISTS wss_ocm_wavelength_info (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
-CREATE TABLE IF NOT EXISTS ocm_optical_parameters (
+  CREATE TABLE IF NOT EXISTS ocm_optical_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -214,7 +211,7 @@ CREATE TABLE IF NOT EXISTS ocm_optical_parameters (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
-CREATE TABLE IF NOT EXISTS ocm_wavelength_info (
+  CREATE TABLE IF NOT EXISTS ocm_wavelength_info (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -233,7 +230,7 @@ CREATE TABLE IF NOT EXISTS ocm_wavelength_info (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
-CREATE TABLE IF NOT EXISTS fc_optical_parameters (
+  CREATE TABLE IF NOT EXISTS fc_optical_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -265,7 +262,7 @@ CREATE TABLE IF NOT EXISTS fc_optical_parameters (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
-CREATE TABLE IF NOT EXISTS fc_fibre_parameters (
+  CREATE TABLE IF NOT EXISTS fc_fibre_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -314,7 +311,7 @@ CREATE TABLE IF NOT EXISTS fc_fibre_parameters (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
-CREATE TABLE IF NOT EXISTS amp_optical_parameters (
+  CREATE TABLE IF NOT EXISTS amp_optical_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -401,7 +398,7 @@ CREATE TABLE IF NOT EXISTS amp_optical_parameters (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
- CREATE TABLE IF NOT EXISTS 100G_optical_parameters (
+  CREATE TABLE IF NOT EXISTS 100G_optical_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -441,7 +438,7 @@ CREATE TABLE IF NOT EXISTS amp_optical_parameters (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
- CREATE TABLE IF NOT EXISTS tpn_ethernet_parameters (
+  CREATE TABLE IF NOT EXISTS tpn_ethernet_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -480,7 +477,7 @@ CREATE TABLE IF NOT EXISTS amp_optical_parameters (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
-CREATE TABLE IF NOT EXISTS 100G_fec_parameters (
+  CREATE TABLE IF NOT EXISTS 100G_fec_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   rcv_date DATE NOT NULL ,
   rcv_time TIME NOT NULL ,
@@ -676,7 +673,7 @@ CREATE TABLE IF NOT EXISTS 100G_fec_parameters (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
-CREATE TABLE IF NOT EXISTS sch_fc_optical_parameters (
+  CREATE TABLE IF NOT EXISTS sch_fc_optical_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   sch_status TINYINT(3) NOT NULL,
   rcv_date DATE NOT NULL ,
@@ -709,7 +706,7 @@ CREATE TABLE IF NOT EXISTS sch_fc_optical_parameters (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
-CREATE TABLE IF NOT EXISTS sch_fc_fibre_parameters (
+  CREATE TABLE IF NOT EXISTS sch_fc_fibre_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   sch_status TINYINT(3) NOT NULL,
   rcv_date DATE NOT NULL ,
@@ -745,7 +742,7 @@ CREATE TABLE IF NOT EXISTS sch_fc_fibre_parameters (
     ON UPDATE CASCADE);
     
     
-    CREATE TABLE IF NOT EXISTS sch_ber_parameters (
+  CREATE TABLE IF NOT EXISTS sch_ber_parameters (
   ref_key VARCHAR(30) NOT NULL ,
   sch_status TINYINT(3) NOT NULL,
   rcv_date DATE NOT NULL ,

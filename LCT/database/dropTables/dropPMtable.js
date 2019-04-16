@@ -1,6 +1,6 @@
 var sql=require("../DBConnection")
 var fs =require("fs");
-var pmquery=fs.readFileSync("../sqlFiles/createTable/createPM.sql").toString().split(';');
+var pmquery=fs.readFileSync("../sqlFiles/dropTable/dropPM.sql").toString().split(';');
 
 for(let i=0;i<pmquery.length-1;i++)
 {
@@ -9,7 +9,7 @@ for(let i=0;i<pmquery.length-1;i++)
           console.log(err.message);
         }
         else {
-          console.log("Table Created", results);
+          console.log("Table Droped", results);
         }
       });
 }

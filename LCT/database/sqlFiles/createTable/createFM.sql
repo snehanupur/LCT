@@ -1,5 +1,4 @@
-DROP TABLE IF EXISTS cscc_och_current_alarms;
-CREATE TABLE IF NOT EXISTS cscc_och_current_alarms(
+	CREATE TABLE IF NOT EXISTS cscc_och_current_alarms(
     cardId tinyint(3) NOT NULL DEFAULT '0',
 	alarmId tinyint(3) NOT NULL DEFAULT '0',
 	category tinyint(3) NOT NULL DEFAULT '0',
@@ -10,11 +9,9 @@ CREATE TABLE IF NOT EXISTS cscc_och_current_alarms(
 	occTime varchar(15) NOT NULL,
 	maskbit tinyint(3) NOT NULL DEFAULT '0',
 	cardKey tinyint(3) NOT NULL,
-	PRIMARY KEY (cardId, alarmId, category, direction, wavelength, cardKey)
-);
+	PRIMARY KEY (cardId, alarmId, category, direction, wavelength, cardKey));
 
-DROP TABLE IF EXISTS cscc_ots_oms_current_alarms;
-CREATE TABLE IF NOT EXISTS cscc_ots_oms_current_alarms(
+	CREATE TABLE IF NOT EXISTS cscc_ots_oms_current_alarms(
     cardId tinyint(3) NOT NULL DEFAULT '0',
 	alarmId tinyint(3) NOT NULL DEFAULT '0',
 	category tinyint(3) NOT NULL DEFAULT '0',
@@ -24,11 +21,9 @@ CREATE TABLE IF NOT EXISTS cscc_ots_oms_current_alarms(
 	occTime varchar(15) NOT NULL,
 	maskbit tinyint(3) NOT NULL DEFAULT '0',
 	cardKey tinyint(3) NOT NULL,
-	PRIMARY KEY (cardId, alarmId, category, interface, cardKey)
-);
+	PRIMARY KEY (cardId, alarmId, category, interface, cardKey));
 
-DROP TABLE IF EXISTS cscc_device_current_alarms;
-CREATE TABLE IF NOT EXISTS cscc_device_current_alarms(
+	CREATE TABLE IF NOT EXISTS cscc_device_current_alarms(
 	cardId tinyint(3) NOT NULL DEFAULT '0',
 	alarmId tinyint(3) NOT NULL DEFAULT '0',
 	category tinyint(3) NOT NULL DEFAULT '0',
@@ -39,11 +34,9 @@ CREATE TABLE IF NOT EXISTS cscc_device_current_alarms(
 	occTime varchar(15) NOT NULL,
 	maskbit tinyint(3) NOT NULL DEFAULT '0',
 	cardKey tinyint(3) NOT NULL,
-	PRIMARY KEY (cardId, alarmId, category, direction, wavelength, cardKey)	
-);
+	PRIMARY KEY (cardId, alarmId, category, direction, wavelength, cardKey));
 
-DROP TABLE IF EXISTS tpn_client_current_alarms;
-CREATE TABLE IF NOT EXISTS tpn_client_current_alarms(
+	CREATE TABLE IF NOT EXISTS tpn_client_current_alarms(
 	cardId tinyint(3) NOT NULL DEFAULT '0',
 	alarmId tinyint(3) NOT NULL DEFAULT '0',
 	category tinyint(3) NOT NULL DEFAULT '0',
@@ -54,11 +47,9 @@ CREATE TABLE IF NOT EXISTS tpn_client_current_alarms(
 	occTime varchar(15) NOT NULL,
 	maskbit tinyint(3) NOT NULL DEFAULT '0',
 	cardKey tinyint(3) NOT NULL,
-	PRIMARY KEY (cardId, alarmId, category, interface, cardkey)
-);
+	PRIMARY KEY (cardId, alarmId, category, interface, cardkey));
 
-DROP TABLE IF EXISTS tpn_otu_odu_current_alarms;
-CREATE TABLE IF NOT EXISTS tpn_otu_odu_current_alarms(
+	CREATE TABLE IF NOT EXISTS tpn_otu_odu_current_alarms(
 	cardId tinyint(3) NOT NULL DEFAULT '0',
 	alarmId tinyint(3) NOT NULL DEFAULT '0',
 	category tinyint(3) NOT NULL DEFAULT '0',
@@ -67,11 +58,9 @@ CREATE TABLE IF NOT EXISTS tpn_otu_odu_current_alarms(
 	occTime varchar(15) NOT NULL,
 	maskbit tinyint(3) NOT NULL DEFAULT '0',
 	cardKey tinyint(3) NOT NULL,
-	PRIMARY KEY (cardId, alarmId, category, cardkey)
-);
+	PRIMARY KEY (cardId, alarmId, category, cardkey));
 
-DROP TABLE IF EXISTS tpn_device_current_alarms;
-CREATE TABLE IF NOT EXISTS tpn_device_current_alarms(
+C	REATE TABLE IF NOT EXISTS tpn_device_current_alarms(
 	cardId tinyint(3) NOT NULL DEFAULT '0',
 	alarmId tinyint(3) NOT NULL DEFAULT '0',
 	category tinyint(3) NOT NULL DEFAULT '0',
@@ -82,11 +71,9 @@ CREATE TABLE IF NOT EXISTS tpn_device_current_alarms(
 	occTime varchar(15) NOT NULL,
 	maskbit tinyint(3) NOT NULL DEFAULT '0',
 	cardKey tinyint(3) NOT NULL,
-	PRIMARY KEY (cardId, alarmId, category, interface, direction, cardkey)
-);
+	PRIMARY KEY (cardId, alarmId, category, interface, direction, cardkey));
 
-DROP TABLE IF EXISTS amplifier_current_alarms;
-CREATE TABLE IF NOT EXISTS amplifier_current_alarms(
+	CREATE TABLE IF NOT EXISTS amplifier_current_alarms(
 	cardId tinyint(3) NOT NULL DEFAULT '0',
 	alarmId tinyint(3) NOT NULL DEFAULT '0',
 	category tinyint(3) NOT NULL DEFAULT '0',
@@ -96,11 +83,9 @@ CREATE TABLE IF NOT EXISTS amplifier_current_alarms(
 	occTime varchar(15) NOT NULL,
 	maskbit tinyint(3) NOT NULL DEFAULT '0',
 	cardKey tinyint(3) NOT NULL,
-	PRIMARY KEY (cardId, alarmId, category, interface, cardkey)
-);
+	PRIMARY KEY (cardId, alarmId, category, interface, cardkey));
 
-DROP TABLE IF EXISTS lineCard_current_alarms;
-CREATE TABLE IF NOT EXISTS lineCard_current_alarms(
+	CREATE TABLE IF NOT EXISTS lineCard_current_alarms(
 	cardType tinyint(3) NOT NULL DEFAULT '0',
 	cardId tinyint(3) NOT NULL DEFAULT '0',
 	alarmId tinyint(3) NOT NULL DEFAULT '0',
@@ -111,8 +96,7 @@ CREATE TABLE IF NOT EXISTS lineCard_current_alarms(
 	occTime varchar(15) NOT NULL,
 	maskbit tinyint(3) NOT NULL DEFAULT '0',
 	cardKey tinyint(3) NOT NULL,
-	PRIMARY KEY (cardType, cardId, alarmId, category, interface, cardkey)
-);
+	PRIMARY KEY (cardType, cardId, alarmId, category, interface, cardkey));
 
 
 CREATE TABLE IF NOT EXISTS cscc_och_history_alarms(

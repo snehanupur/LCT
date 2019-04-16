@@ -1,14 +1,11 @@
-DROP TABLE IF EXISTS SubrackKeys;
-CREATE TABLE IF NOT EXISTS SubrackKeys (
+  CREATE TABLE IF NOT EXISTS SubrackKeys (
   RackId tinyint(3) unsigned NOT NULL default '0',
   SubrackId tinyint(3) unsigned NOT NULL default '0',
   ukey varchar(2)  default '00',     
   SubrackAlarmStaus tinyint(3) unsigned default '0',   
-  PRIMARY KEY (ukey)
-  );
+  PRIMARY KEY (ukey));
 
-DROP TABLE IF EXISTS ContCardInfo;
-CREATE TABLE IF NOT EXISTS ContCardInfo (
+  CREATE TABLE IF NOT EXISTS ContCardInfo (
   ukey  varchar(2)  default '00',
   CardId tinyint(3) unsigned NOT NULL default '0',  
   State tinyint(3) unsigned default '0',
@@ -19,21 +16,17 @@ CREATE TABLE IF NOT EXISTS ContCardInfo (
   CardType tinyint(3) unsigned default '0',  
   CardSubType tinyint(3) unsigned default '0',  
   SerialNo varchar(32)  default 'NONE',
-  PRIMARY KEY  (ukey,CardId)
-  );
-  
-DROP TABLE IF EXISTS CardInfo;
-CREATE TABLE IF NOT EXISTS CardInfo (
+  PRIMARY KEY  (ukey,CardId));
+
+  CREATE TABLE IF NOT EXISTS CardInfo (
   ukey  varchar(2)  default '00',
   CardId tinyint(3) unsigned NOT NULL default '0',  
   State tinyint(3) unsigned default '0',
   CardType tinyint(3) unsigned default '0', 
   CardSubType tinyint(3) unsigned default '0',  
   SerialNo varchar(32)  default 'NONE',
-  PRIMARY KEY  (ukey,CardId)
-  );
-  
- DROP TABLE IF EXISTS DiscoveredTpc;
+  PRIMARY KEY  (ukey,CardId));
+
  CREATE TABLE IF NOT EXISTS DiscoveredTpc (
   RackId tinyint(3) unsigned NOT NULL default '0',
   CardId tinyint(3) unsigned NOT NULL default '0',
@@ -44,10 +37,8 @@ CREATE TABLE IF NOT EXISTS CardInfo (
   CardType tinyint(3) unsigned NOT NULL default '0',
   CardSubType tinyint(3) unsigned NOT NULL default '0',
   SerialNo varchar(32)  default 'NONE', 
-  PRIMARY KEY (Mac)
-  );
-  
-  DROP TABLE IF EXISTS ControllerAlarmStatus;
+  PRIMARY KEY (Mac));
+
   CREATE TABLE IF NOT EXISTS ControllerAlarmStatus (
   ukey  varchar(2)  default '00',
   CardType  varchar(10)  default 'NONE',
@@ -55,10 +46,8 @@ CREATE TABLE IF NOT EXISTS CardInfo (
   InterfaceId tinyint(3) unsigned default '0',
   InterfaceAlarmStatus tinyint(3) unsigned default '0',
   CardAlarmStaus tinyint(3) unsigned default '0',  
-  PRIMARY KEY  (ukey,CardId,CardType,InterfaceId)
-  );
-  
-  DROP TABLE IF EXISTS TpnAlarmStatus;
+  PRIMARY KEY  (ukey,CardId,CardType,InterfaceId));
+
   CREATE TABLE IF NOT EXISTS TpnAlarmStatus (
   ukey  varchar(2)  default '00',
   CardType  varchar(10)  default 'NONE',
@@ -66,6 +55,5 @@ CREATE TABLE IF NOT EXISTS CardInfo (
   InterfaceId tinyint(3) unsigned default '0',
   InterfaceAlarmStatus tinyint(3) unsigned default '0',
   CardAlarmStaus tinyint(3) unsigned default '0',  
-  PRIMARY KEY  (ukey,CardId,InterfaceId)
-  );
+  PRIMARY KEY  (ukey,CardId,InterfaceId));
    

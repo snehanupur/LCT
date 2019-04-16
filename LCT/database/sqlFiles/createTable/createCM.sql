@@ -1,5 +1,4 @@
-DROP TABLE IF EXISTS OtnIntfInfo;
-CREATE TABLE IF NOT EXISTS OtnIntfInfo (
+  CREATE TABLE IF NOT EXISTS OtnIntfInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   IntfId tinyint(3) unsigned NOT NULL default '0',
@@ -9,8 +8,7 @@ CREATE TABLE IF NOT EXISTS OtnIntfInfo (
   PRIMARY KEY  (ukey,CardId)
   );
 
-DROP TABLE IF EXISTS SfpInfo;
-CREATE TABLE IF NOT EXISTS SfpInfo (
+  CREATE TABLE IF NOT EXISTS SfpInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0', 
   SwitchId tinyint(3) unsigned NOT NULL default '0', 
@@ -26,8 +24,7 @@ CREATE TABLE IF NOT EXISTS SfpInfo (
   PRIMARY KEY  (ukey,CardId,SwitchId,SfpNo)
   );
   
- DROP TABLE IF EXISTS ClientInterfaceInfo;
-CREATE TABLE IF NOT EXISTS ClientInterfaceInfo (
+  CREATE TABLE IF NOT EXISTS ClientInterfaceInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',  
   ClientIntfId tinyint(3) unsigned default '0',
@@ -38,9 +35,8 @@ CREATE TABLE IF NOT EXISTS ClientInterfaceInfo (
   LinePortNo tinyint(3) unsigned NOT NULL default '0',  
   PRIMARY KEY  (ukey,CardId,ClientIntfId)
   );
-  
- DROP TABLE IF EXISTS TrailTerminationInfo;
-CREATE TABLE IF NOT EXISTS TrailTerminationInfo (
+
+  CREATE TABLE IF NOT EXISTS TrailTerminationInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   IntfId tinyint(3) unsigned NOT NULL default '0',
@@ -54,8 +50,7 @@ CREATE TABLE IF NOT EXISTS TrailTerminationInfo (
   TimDetMode tinyint(3) unsigned default '0',
   PRIMARY KEY  (ukey,CardId,IntfId,Position,Segment)
   );
- 
- DROP TABLE IF EXISTS GCCInfo;
+
  CREATE TABLE IF NOT EXISTS GCCInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
@@ -65,8 +60,7 @@ CREATE TABLE IF NOT EXISTS TrailTerminationInfo (
   PRIMARY KEY  (ukey,CardId,IntfId)
   );
 
-DROP TABLE IF EXISTS PayLoadInfo;
-CREATE TABLE IF NOT EXISTS PayLoadInfo (
+  CREATE TABLE IF NOT EXISTS PayLoadInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   IntfId tinyint(3) unsigned NOT NULL default '0',
@@ -75,8 +69,7 @@ CREATE TABLE IF NOT EXISTS PayLoadInfo (
   PRIMARY KEY  (ukey,CardId,IntfId)
   );
   
-DROP TABLE IF EXISTS FecInfo;
-CREATE TABLE IF NOT EXISTS FecInfo (
+  CREATE TABLE IF NOT EXISTS FecInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   IntfId tinyint(3) unsigned NOT NULL default '0',
@@ -85,8 +78,7 @@ CREATE TABLE IF NOT EXISTS FecInfo (
   PRIMARY KEY  (ukey,CardId,IntfId)
   );
   
-DROP TABLE IF EXISTS FecErrorInfo;
-CREATE TABLE IF NOT EXISTS FecErrorInfo (
+  CREATE TABLE IF NOT EXISTS FecErrorInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   IntfId tinyint(3) unsigned NOT NULL default '0',
@@ -96,9 +88,7 @@ CREATE TABLE IF NOT EXISTS FecErrorInfo (
   PRIMARY KEY  (ukey,CardId,IntfId)
   );
 
-
-
-CREATE TABLE IF NOT EXISTS TcmPriorInfo (
+  CREATE TABLE IF NOT EXISTS TcmPriorInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   IntfId tinyint(3) unsigned NOT NULL default '0',
@@ -113,9 +103,8 @@ CREATE TABLE IF NOT EXISTS TcmPriorInfo (
   Priority8 tinyint(3) unsigned NOT NULL default '0',
   PRIMARY KEY  (ukey,CardId,IntfId,Position)
   );
-  
- DROP TABLE IF EXISTS TcmInfo;
-CREATE TABLE IF NOT EXISTS TcmInfo (
+
+  CREATE TABLE IF NOT EXISTS TcmInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   IntfId tinyint(3) unsigned NOT NULL default '0',
@@ -127,8 +116,7 @@ CREATE TABLE IF NOT EXISTS TcmInfo (
   PRIMARY KEY  (ukey,CardId,IntfId,Position,Segment)
   );
 
-  DROP TABLE IF EXISTS CardConfigInfo;
-CREATE TABLE IF NOT EXISTS CardConfigInfo (
+  CREATE TABLE IF NOT EXISTS CardConfigInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   State tinyint(3) unsigned default '0',
@@ -141,9 +129,7 @@ CREATE TABLE IF NOT EXISTS CardConfigInfo (
   PortNum tinyint(3) unsigned NOT NULL default '0',  
   PRIMARY KEY  (ukey,CardId, LinePortNo)
   );
-  
-  
-    DROP TABLE IF EXISTS WavelengthStatus;
+
 	CREATE TABLE IF NOT EXISTS WavelengthStatus ( 
   WavelengthNo tinyint(3) unsigned NOT NULL default '0',
   EastStatus tinyint(3) unsigned NOT NULL default '0',
@@ -157,14 +143,12 @@ CREATE TABLE IF NOT EXISTS CardConfigInfo (
   PRIMARY KEY  (WavelengthNo)
   );
   
-   DROP TABLE IF EXISTS WavelengthValues;
   CREATE TABLE IF NOT EXISTS WavelengthValues ( 
   WavelengthNo tinyint(3) unsigned NOT NULL default '0',
   Value float NOT NULL ,
   Frequency float NOT NULL ,
   PRIMARY KEY  (WavelengthNo)
   );
-
 
   CREATE TABLE IF NOT EXISTS neInfo (
   stationName VARCHAR(20) NOT NULL,
@@ -190,8 +174,7 @@ CREATE TABLE IF NOT EXISTS CardConfigInfo (
   PRIMARY KEY(stationName)
   );
 
-
-CREATE TABLE IF NOT EXISTS SystemErrors (
+  CREATE TABLE IF NOT EXISTS SystemErrors (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   Opcode int(5) unsigned NOT NULL default '0',
@@ -202,13 +185,13 @@ CREATE TABLE IF NOT EXISTS SystemErrors (
   PRIMARY KEY(date1,time)
   );
 
-CREATE TABLE IF NOT EXISTS logInfo (
+  CREATE TABLE IF NOT EXISTS logInfo (
   log_date DATETIME ,
   command varchar(400) NOT NULL default 'NONE',
   userLct varchar(20)
   );
 
-CREATE TABLE IF NOT EXISTS ChannelConfig (
+  CREATE TABLE IF NOT EXISTS ChannelConfig (
   Direction int(3) unsigned NOT NULL default '0',
   Wavelength int(5) unsigned NOT NULL default '0',
   Attenuation float(3) unsigned NOT NULL default '0',
@@ -219,8 +202,7 @@ CREATE TABLE IF NOT EXISTS ChannelConfig (
   PRIMARY KEY(Wavelength)
   );
 
- DROP TABLE IF EXISTS AmpfConfigInfo;
-CREATE TABLE IF NOT EXISTS AmpfConfigInfo (
+  CREATE TABLE IF NOT EXISTS AmpfConfigInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   Gain float(5) unsigned default '0',  
@@ -230,8 +212,7 @@ CREATE TABLE IF NOT EXISTS AmpfConfigInfo (
   PRIMARY KEY  (ukey,CardId,AmpfType)
   );
 
-DROP TABLE IF EXISTS ProtectionConfigInfo;
-CREATE TABLE IF NOT EXISTS ProtectionConfigInfo (
+  CREATE TABLE IF NOT EXISTS ProtectionConfigInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   ActiveLine tinyint(3) unsigned default '0',  
@@ -240,16 +221,14 @@ CREATE TABLE IF NOT EXISTS ProtectionConfigInfo (
   PRIMARY KEY  (ukey,CardId)
   );
 
-DROP TABLE IF EXISTS MinimumConfigInfo;
-CREATE TABLE IF NOT EXISTS MinimumConfigInfo (
+  CREATE TABLE IF NOT EXISTS MinimumConfigInfo (
   CardType tinyint(3) NOT NULL default '0',
   ExpectedFlag int(4) unsigned NOT NULL default '0' ,
   AlarmFlag  tinyint(3)  NOT NULL default '0',
   PRIMARY KEY  (CardType)
   );
-  
-DROP TABLE IF EXISTS McsPortMappingInfo;
-CREATE TABLE IF NOT EXISTS McsPortMappingInfo (
+
+  CREATE TABLE IF NOT EXISTS McsPortMappingInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   McsModuleNum tinyint(3) unsigned NOT NULL default '0',
@@ -257,9 +236,8 @@ CREATE TABLE IF NOT EXISTS McsPortMappingInfo (
   CommonPort  tinyint(3)  unsigned NOT NULL default '0',
   PRIMARY KEY  (ukey,CardId,McsModuleNum,SwitchPort)
   );  
-  
-DROP TABLE IF EXISTS ProtectionDetailsInfo;
-CREATE TABLE IF NOT EXISTS ProtectionDetailsInfo (
+
+  CREATE TABLE IF NOT EXISTS ProtectionDetailsInfo (
   nUkey varchar(2)  default '00',  
   nCardId tinyint(3) unsigned NOT NULL default '0',
   nPortId tinyint(3) unsigned NOT NULL default '0',
@@ -273,8 +251,7 @@ CREATE TABLE IF NOT EXISTS ProtectionDetailsInfo (
   PRIMARY KEY  (nUkey,nCardId,nPortId)
   );  
 
-DROP TABLE IF EXISTS LineChannelProtectionDetailsInfo;
-CREATE TABLE IF NOT EXISTS LineChannelProtectionDetailsInfo (
+  CREATE TABLE IF NOT EXISTS LineChannelProtectionDetailsInfo (
   mpnUkey varchar(2) default '00',
   mpnCardId tinyint(3) unsigned NOT NULL default '0',
   mpnCardType tinyint unsigned NOT NULL default '0',
@@ -292,7 +269,7 @@ CREATE TABLE IF NOT EXISTS LineChannelProtectionDetailsInfo (
   PRIMARY KEY  (olpUkey,olpCardId,olpCardType,olpCardSubType)
   ); 
 
-CREATE TABLE IF NOT EXISTS loopbackInfo (
+  CREATE TABLE IF NOT EXISTS loopbackInfo (
   ukey varchar(2)  default '00',  
   CardId tinyint(3) unsigned NOT NULL default '0',
   IntfId tinyint(3) unsigned NOT NULL default '0',
@@ -308,15 +285,13 @@ CREATE TABLE IF NOT EXISTS loopbackInfo (
   PRIMARY KEY  (ukey,CardId)
   );
   
-  DROP TABLE IF EXISTS DirectionNames;
   CREATE TABLE IF NOT EXISTS DirectionNames (  
   Direction tinyint(3) unsigned NOT NULL default '0',
   Name varchar(32)  default '00',
   PRIMARY KEY  (Direction,Name)
   );
   
-  DROP TABLE IF EXISTS AggregatorInfo;
-CREATE TABLE IF NOT EXISTS AggregatorInfo (
+  CREATE TABLE IF NOT EXISTS AggregatorInfo (
   aUkey varchar(2)  default '00',  
   aCardId tinyint(3) unsigned NOT NULL default '0',
   aLinePortNo tinyint(3) unsigned NOT NULL default '0',
@@ -326,7 +301,6 @@ CREATE TABLE IF NOT EXISTS AggregatorInfo (
   PRIMARY KEY  (aUkey,aCardId,aLinePortNo)
   );  
   
-  DROP TABLE IF EXISTS SubrackDetails;
   CREATE TABLE IF NOT EXISTS SubrackDetails (
   RackId tinyint(3) unsigned NOT NULL default '0',
   SubrackId tinyint(3) unsigned NOT NULL default '0',

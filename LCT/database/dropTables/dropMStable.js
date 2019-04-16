@@ -1,6 +1,6 @@
 var sql=require("../DBConnection")
 var fs =require("fs");
-var msquery=fs.readFileSync("../sqlFiles/createTable/createMS.sql").toString().split(';');
+var msquery=fs.readFileSync("../sqlFiles/dropTable/dropteMS.sql").toString().split(';');
 
 for(let i=0;i<msquery.length-1;i++)
 {
@@ -9,7 +9,7 @@ for(let i=0;i<msquery.length-1;i++)
           console.log(err.message);
         }
         else {
-          console.log("Table Created", results);
+          console.log("Table Droped", results);
         }
       });
 }
