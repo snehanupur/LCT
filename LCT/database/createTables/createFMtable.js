@@ -1,15 +1,28 @@
-var sql=require("../DBConnection")
-var fs =require("fs");
-var fmquery=fs.readFileSync("../sqlFiles/createTable/createFM.sql").toString().split(';');
+var sql = require("../DBConnection")
+var fs = require("fs");
 
-for(let i=0;i<fmquery.length-1;i++)
-{
-    sql.con.query(fmquery[i], function (err, results) {
-        if (err) {
-          console.log(err.message);
-        }
-        else {
-          console.log("Table Created", results);
-        }
-      });
+async function createFM() {
+  return new Promise(async (resolve, reject) => {
+    try {
+      var fmquery = fs.readFileSync("../sqlFiles/createTable/createFM.sql").toString().split(';');
+
+      for (let i = 0; i < fmquery.length - 1; i++) {
+        sql.con.query(fmquery[i], function (err, results) {
+          if (err) {
+            console.log(err.message);
+          }
+          else {
+            console.log("Table Created", results);
+          }
+        });
+      } if (i == fmquery.length - 1)
+        resolve("ok");
+    }
+    catch (error) {
+      reject(error)
+
+    }
+  })
+
 }
+module.exports = { createFM }

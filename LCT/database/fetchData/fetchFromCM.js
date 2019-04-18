@@ -1,354 +1,463 @@
 var sql=require("../DBConnection");
 
-function fetch_OtnIntfInfo()
+async function fetch_OtnIntfInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,IntfId,Functionality,BitRate,InterfaceType from OtnIntfInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+  })
 }
 
-function fetch_SfpInfo()
+async function fetch_SfpInfo()
 {
-    let fetchquery = `select ukey,CardId,SwitchId,SfpNo,SfpStatus,Name,VendorName,VendorId,SerialNo,TxRxstatus,AlsStatus,OpticalReach from SfpInfo`;
-    sql.con.query(fetchquery, function (err, results) {
-        if (err) {
-          console.log(err.message);
-        }
-        else {
-          console.log("result", results.affectedRows);
-        }
-      });
+    return new Promise(async (resolve, reject) => {
+      let fetchquery = `select ukey,CardId,SwitchId,SfpNo,SfpStatus,Name,VendorName,VendorId,SerialNo,TxRxstatus,AlsStatus,OpticalReach from SfpInfo`; 
+      sql.con.query(fetchquery, async function (err, results) {
+          if (err) {
+            console.log(err.message);
+            reject(err);
+          }
+          else {
+            console.log("result", results.affectedRows);
+            resolve(results.affectedRows);
+          }
+        });
+  })
 }
 
-function fetch_ClientInterfaceInfo()
+async function fetch_ClientInterfaceInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,ClientIntfId,ClientType,ClientName,TribSetId,Status,LinePortNo from ClientInterfaceInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_TrailTerminationInfo()
+async function fetch_TrailTerminationInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,IntfId,Position,Segment,Sapi,SIcc,Dapi,DIcc,OpSpecific,TimDetMode from TrailTerminationInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_GCCInfo()
+async function fetch_GCCInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,IntfId,GccType,GccStatus from GCCInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_PayLoadInfo()
+async function fetch_PayLoadInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,IntfId,PayloadType,TribSlot from PayLoadInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
    
-function fetch_FecInfo()
+async function fetch_FecInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,IntfId,FecType,FecStatus from FecInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
     
-function fetch_FecErrorInfo()
+async function fetch_FecErrorInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,IntfId,ErrRate,errMode,errStatus from FecErrorInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_TcmPriorInfo()
+async function fetch_TcmPriorInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,IntfId,Position,Priority1,Priority2,Priority3,Priority4,Priority5,Priority6,Priority7,Priority8 from TcmPriorInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
     
-function fetch_TcmInfo()
+async function fetch_TcmInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,IntfId,ActStatus,ActValue,Segment,Position,TcmMode from TcmInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_CardConfigInfo()
+async function fetch_CardConfigInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,State,CardType,CardSubType,TxWavelengthNum,RxWavelengthNum,Direction,LinePortNo,PortNum from CardConfigInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_WavelengthStatus()
+async function fetch_WavelengthStatus()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select WavelengthNo,EastStatus,WestStatus,NorthStatus,SouthStatus,NorthEastStatus,NorthWestStatus,SouthEastStatus,SouthWestStatus from WavelengthStatus`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_Wavelength()
+async function fetch_Wavelength()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select WavelengthNo,Value,Frequency from Wavelength`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_neInfo()
+async function fetch_neInfo()
 {
+  return new Promise(async (resolve, reject) => {
+   
     let fetchquery = `select stationName,siteName,ipv4,subnet,gateway,mac,ipv6,neType,gneFlag,opticalReach,degree,orderOfOtm,snmpAgentVid,systemCapacity,topology,direction,rcvDate,rcvTime,PotpType,IlaType from neInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_SystemErrors()
+async function fetch_SystemErrors()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,Opcode,ErrorCode,ErrorString,date1,time from SystemErrors`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_logInfo()
+async function fetch_logInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select log_date,command,userLct from logInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_ChannelConfig ()
+async function fetch_ChannelConfig ()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select Direction,Wavelength,Attenuation,Action,ChannelWidt,ACM,CCM from ChannelConfig`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_AmpfConfigInfo()
+async function fetch_AmpfConfigInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,Gain,AmpfType,Status,Direction from AmpfConfigInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_ProtectionConfigInfo()
+async function fetch_ProtectionConfigInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,ActiveLine,ProtectionType,Command from ProtectionConfigInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_MinimumConfigInfo()
+async function fetch_MinimumConfigInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select CardType,ExpectedFlag,AlarmFlag from MinimumConfigInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_McsPortMappingInfo()
+async function fetch_McsPortMappingInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,McsModuleNum,SwitchPort,CommonPort from McsPortMappingInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_LineChannelProtectionDetailsInfo()
+async function fetch_LineChannelProtectionDetailsInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select mpnUkey,mpnCardId,mpnCardType,mpnCardSubType,olpUkey,olpCardId,olpCardType,olpCardSubType,protectionMechanism,protectionStatus ,activeLine,protectiontype,currentProtectionStatus,protectionTopology from LineChannelProtectionDetailsInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_loopbackInfo()
+async function fetch_loopbackInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,IntfId,loopbackType,loopbackStatus from loopbackInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+   sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_ocmConfigInfo()
+async function fetch_ocmConfigInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select ukey,CardId,OcmId from ocmConfigInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+   sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_DirectionNames()
+async function fetch_DirectionNames()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select Direction,Name from DirectionNames`;
-    sql.con.query(fetchquery, function (err, results) {
+   sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
-function fetch_AggregatorInfo()
+async function fetch_AggregatorInfo()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select aUkey,aCardId,aLinePortNo,mpnUkey,mpnCardId,mpnClientPortNo from AggregatorInfo`;
-    sql.con.query(fetchquery, function (err, results) {
+   sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})   
 }
 
-function fetch_SubrackDetails()
+async function fetch_SubrackDetails()
 {
+  return new Promise(async (resolve, reject) => {
     let fetchquery = `select RackId,SubrackId,ukey,Make,SerialNo,Model,ManfYear from SubrackDetails`;
-    sql.con.query(fetchquery, function (err, results) {
+   sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
+          reject(err);
         }
         else {
           console.log("result", results.affectedRows);
+          resolve(results.affectedRows);
         }
       });
+})
 }
 
 module.exports={
