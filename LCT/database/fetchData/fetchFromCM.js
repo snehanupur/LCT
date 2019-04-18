@@ -3,7 +3,7 @@ var sql=require("../DBConnection");
 async function fetch_OtnIntfInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,IntfId,Functionality,BitRate,InterfaceType from OtnIntfInfo`;
+    let fetchquery = `select * from OtnIntfInfo`; //ukey,CardId,IntfId,Functionality,BitRate,InterfaceType 
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -20,7 +20,7 @@ async function fetch_OtnIntfInfo()
 async function fetch_SfpInfo()
 {
     return new Promise(async (resolve, reject) => {
-      let fetchquery = `select ukey,CardId,SwitchId,SfpNo,SfpStatus,Name,VendorName,VendorId,SerialNo,TxRxstatus,AlsStatus,OpticalReach from SfpInfo`; 
+      let fetchquery = `select * from SfpInfo`; // ukey,CardId,SwitchId,SfpNo,SfpStatus,Name,VendorName,VendorId,SerialNo,TxRxstatus,AlsStatus,OpticalReach
       sql.con.query(fetchquery, async function (err, results) {
           if (err) {
             console.log(err.message);
@@ -37,7 +37,7 @@ async function fetch_SfpInfo()
 async function fetch_ClientInterfaceInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,ClientIntfId,ClientType,ClientName,TribSetId,Status,LinePortNo from ClientInterfaceInfo`;
+    let fetchquery = `select * from ClientInterfaceInfo`; //ukey,CardId,ClientIntfId,ClientType,ClientName,TribSetId,Status,LinePortNo
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -54,7 +54,7 @@ async function fetch_ClientInterfaceInfo()
 async function fetch_TrailTerminationInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,IntfId,Position,Segment,Sapi,SIcc,Dapi,DIcc,OpSpecific,TimDetMode from TrailTerminationInfo`;
+    let fetchquery = `select * from TrailTerminationInfo`; // ukey,CardId,IntfId,Position,Segment,Sapi,SIcc,Dapi,DIcc,OpSpecific,TimDetMode
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -71,7 +71,7 @@ async function fetch_TrailTerminationInfo()
 async function fetch_GCCInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,IntfId,GccType,GccStatus from GCCInfo`;
+    let fetchquery = `select * from GCCInfo`; //ukey,CardId,IntfId,GccType,GccStatus 
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -88,7 +88,7 @@ async function fetch_GCCInfo()
 async function fetch_PayLoadInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,IntfId,PayloadType,TribSlot from PayLoadInfo`;
+    let fetchquery = `select * from PayLoadInfo`; // ukey,CardId,IntfId,PayloadType,TribSlot 
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -105,7 +105,7 @@ async function fetch_PayLoadInfo()
 async function fetch_FecInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,IntfId,FecType,FecStatus from FecInfo`;
+    let fetchquery = `select * from FecInfo`; //ukey,CardId,IntfId,FecType,FecStatus
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -122,7 +122,7 @@ async function fetch_FecInfo()
 async function fetch_FecErrorInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,IntfId,ErrRate,errMode,errStatus from FecErrorInfo`;
+    let fetchquery = `select * from FecErrorInfo`; //ukey,CardId,IntfId,ErrRate,errMode,errStatus 
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -139,7 +139,7 @@ async function fetch_FecErrorInfo()
 async function fetch_TcmPriorInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,IntfId,Position,Priority1,Priority2,Priority3,Priority4,Priority5,Priority6,Priority7,Priority8 from TcmPriorInfo`;
+    let fetchquery = `select * from TcmPriorInfo`; //ukey,CardId,IntfId,Position,Priority1,Priority2,Priority3,Priority4,Priority5,Priority6,Priority7,Priority8 
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -156,7 +156,7 @@ async function fetch_TcmPriorInfo()
 async function fetch_TcmInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,IntfId,ActStatus,ActValue,Segment,Position,TcmMode from TcmInfo`;
+    let fetchquery = `select * from TcmInfo`; // ukey,CardId,IntfId,ActStatus,ActValue,Segment,Position,TcmMode
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -173,7 +173,7 @@ async function fetch_TcmInfo()
 async function fetch_CardConfigInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,State,CardType,CardSubType,TxWavelengthNum,RxWavelengthNum,Direction,LinePortNo,PortNum from CardConfigInfo`;
+    let fetchquery = `select * from CardConfigInfo`; //ukey,CardId,State,CardType,CardSubType,TxWavelengthNum,RxWavelengthNum,Direction,LinePortNo,PortNum 
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -190,7 +190,7 @@ async function fetch_CardConfigInfo()
 async function fetch_WavelengthStatus()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select WavelengthNo,EastStatus,WestStatus,NorthStatus,SouthStatus,NorthEastStatus,NorthWestStatus,SouthEastStatus,SouthWestStatus from WavelengthStatus`;
+    let fetchquery = `select * from WavelengthStatus`; // WavelengthNo,EastStatus,WestStatus,NorthStatus,SouthStatus,NorthEastStatus,NorthWestStatus,SouthEastStatus,SouthWestStatus
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -207,7 +207,7 @@ async function fetch_WavelengthStatus()
 async function fetch_Wavelength()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select WavelengthNo,Value,Frequency from Wavelength`;
+    let fetchquery = `select * from Wavelength`; //WavelengthNo,Value,Frequency 
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -225,7 +225,7 @@ async function fetch_neInfo()
 {
   return new Promise(async (resolve, reject) => {
    
-    let fetchquery = `select stationName,siteName,ipv4,subnet,gateway,mac,ipv6,neType,gneFlag,opticalReach,degree,orderOfOtm,snmpAgentVid,systemCapacity,topology,direction,rcvDate,rcvTime,PotpType,IlaType from neInfo`;
+    let fetchquery = `select * from neInfo`; // stationName,siteName,ipv4,subnet,gateway,mac,ipv6,neType,gneFlag,opticalReach,degree,orderOfOtm,snmpAgentVid,systemCapacity,topology,direction,rcvDate,rcvTime,PotpType,IlaType 
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -242,7 +242,7 @@ async function fetch_neInfo()
 async function fetch_SystemErrors()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,Opcode,ErrorCode,ErrorString,date1,time from SystemErrors`;
+    let fetchquery = `select * from SystemErrors`; // ukey,CardId,Opcode,ErrorCode,ErrorString,date1,time
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -259,7 +259,7 @@ async function fetch_SystemErrors()
 async function fetch_logInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select log_date,command,userLct from logInfo`;
+    let fetchquery = `select * from logInfo`; //log_date,command,userLct 
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -276,7 +276,7 @@ async function fetch_logInfo()
 async function fetch_ChannelConfig ()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select Direction,Wavelength,Attenuation,Action,ChannelWidt,ACM,CCM from ChannelConfig`;
+    let fetchquery = `select * from ChannelConfig`; // Direction,Wavelength,Attenuation,Action,ChannelWidt,ACM,CCM
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -293,7 +293,7 @@ async function fetch_ChannelConfig ()
 async function fetch_AmpfConfigInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,Gain,AmpfType,Status,Direction from AmpfConfigInfo`;
+    let fetchquery = `select * from AmpfConfigInfo`; // ukey,CardId,Gain,AmpfType,Status,Direction
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -310,7 +310,7 @@ async function fetch_AmpfConfigInfo()
 async function fetch_ProtectionConfigInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,ActiveLine,ProtectionType,Command from ProtectionConfigInfo`;
+    let fetchquery = `select * from ProtectionConfigInfo`; // ukey,CardId,ActiveLine,ProtectionType,Command
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -327,7 +327,7 @@ async function fetch_ProtectionConfigInfo()
 async function fetch_MinimumConfigInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select CardType,ExpectedFlag,AlarmFlag from MinimumConfigInfo`;
+    let fetchquery = `select * from MinimumConfigInfo`;  // CardType,ExpectedFlag,AlarmFlag
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -344,7 +344,7 @@ async function fetch_MinimumConfigInfo()
 async function fetch_McsPortMappingInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,McsModuleNum,SwitchPort,CommonPort from McsPortMappingInfo`;
+    let fetchquery = `select * from McsPortMappingInfo`; // ukey,CardId,McsModuleNum,SwitchPort,CommonPort
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -361,7 +361,7 @@ async function fetch_McsPortMappingInfo()
 async function fetch_LineChannelProtectionDetailsInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select mpnUkey,mpnCardId,mpnCardType,mpnCardSubType,olpUkey,olpCardId,olpCardType,olpCardSubType,protectionMechanism,protectionStatus ,activeLine,protectiontype,currentProtectionStatus,protectionTopology from LineChannelProtectionDetailsInfo`;
+    let fetchquery = `select * from LineChannelProtectionDetailsInfo`; // mpnUkey,mpnCardId,mpnCardType,mpnCardSubType,olpUkey,olpCardId,olpCardType,olpCardSubType,protectionMechanism,protectionStatus ,activeLine,protectiontype,currentProtectionStatus,protectionTopology
     sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -378,7 +378,7 @@ async function fetch_LineChannelProtectionDetailsInfo()
 async function fetch_loopbackInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,IntfId,loopbackType,loopbackStatus from loopbackInfo`;
+    let fetchquery = `select * from loopbackInfo`; // ukey,CardId,IntfId,loopbackType,loopbackStatus
    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -395,7 +395,7 @@ async function fetch_loopbackInfo()
 async function fetch_ocmConfigInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select ukey,CardId,OcmId from ocmConfigInfo`;
+    let fetchquery = `select * from ocmConfigInfo`; // ukey,CardId,OcmId
    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -412,7 +412,7 @@ async function fetch_ocmConfigInfo()
 async function fetch_DirectionNames()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select Direction,Name from DirectionNames`;
+    let fetchquery = `select * from DirectionNames`; // Direction,Name
    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -429,7 +429,7 @@ async function fetch_DirectionNames()
 async function fetch_AggregatorInfo()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select aUkey,aCardId,aLinePortNo,mpnUkey,mpnCardId,mpnClientPortNo from AggregatorInfo`;
+    let fetchquery = `select * from AggregatorInfo`; // aUkey,aCardId,aLinePortNo,mpnUkey,mpnCardId,mpnClientPortNo
    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);
@@ -446,7 +446,7 @@ async function fetch_AggregatorInfo()
 async function fetch_SubrackDetails()
 {
   return new Promise(async (resolve, reject) => {
-    let fetchquery = `select RackId,SubrackId,ukey,Make,SerialNo,Model,ManfYear from SubrackDetails`;
+    let fetchquery = `select * from SubrackDetails`; // RackId,SubrackId,ukey,Make,SerialNo,Model,ManfYear
    sql.con.query(fetchquery, async function (err, results) {
         if (err) {
           console.log(err.message);

@@ -116,8 +116,7 @@
   
   rx_pwr16_max FLOAT NOT NULL ,
   rx_pwr16_min FLOAT NOT NULL ,
-  rx_pwr16_avg FLOAT NOT NULL ,
-  
+  rx_pwr16_avg FLOAT NOT NULL , 
   PRIMARY KEY (ref_key, rcv_date, rcv_time) ,
   INDEX (ref_key) ,
   CONSTRAINT cm_ref_mcs_opt
@@ -468,7 +467,6 @@
   ether_stats_fragments BIGINT NOT NULL ,
   if_in_errors BIGINT NOT NULL ,
   a_mac_control_frames_rx BIGINT NOT NULL, 
-  
   PRIMARY KEY (ref_key, rcv_date, rcv_time) ,
   INDEX (ref_key) ,
   CONSTRAINT cm_ref_tpn_eth
@@ -1181,7 +1179,7 @@ CREATE TABLE IF NOT EXISTS sch_ocm_wavelength_info (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
     
-  DROP TABLE IF EXISTS pm_link_data;
+
   CREATE  TABLE IF NOT EXISTS pm_link_data (
   station VARCHAR(30) NOT NULL ,
   site VARCHAR(30) NOT NULL ,
